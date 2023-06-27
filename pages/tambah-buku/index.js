@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Layout from '@/widget/layout';
 import { db } from "@/config/firebase";
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, CollectionReference } from 'firebase/firestore';
 import { useRouter } from 'next/router';
 import Judul from '@/components/Header/judul';
 
@@ -25,7 +25,7 @@ const TambahBuku = () => {
                 tahun_terbit: tahunterbit,
             });
             router.push("/");
-        }catch(err) {
+        } catch(err) {
             console.log(err);
         }
     };
@@ -83,11 +83,9 @@ const TambahBuku = () => {
             />
         </div>
         <button className='bg-sky-500 hover:bg-sky-700 px-16 py-2 ml-20 text-white rounded-full'>Simpan</button>
-    </form>
-        </div>
+        </form>
     </div>
-   
-
+    </div>
   </Layout>
   );
 };
